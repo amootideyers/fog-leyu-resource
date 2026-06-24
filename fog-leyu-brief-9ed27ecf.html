@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leyu · 信息说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f5f9fc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e2b3a;
+            padding: 0 16px;
+        }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 28px 0 60px;
+        }
+
+        /* hero */
+        .hero {
+            background: linear-gradient(145deg, #e0f0f5 0%, #cde3ed 100%);
+            border-radius: 28px;
+            padding: 48px 36px 40px;
+            margin-bottom: 48px;
+            box-shadow: 0 6px 14px rgba(0, 50, 70, 0.06);
+            text-align: center;
+        }
+        .hero h1 {
+            font-weight: 500;
+            font-size: 2.2rem;
+            letter-spacing: -0.02em;
+            color: #0a3a4a;
+            margin-bottom: 16px;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #1d5468;
+            max-width: 600px;
+            margin: 0 auto 22px;
+            opacity: 0.9;
+        }
+        .hero .tagline {
+            display: inline-block;
+            background: #ffffffcc;
+            backdrop-filter: blur(2px);
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            color: #136b7a;
+            border: 1px solid #b3d6e3;
+            letter-spacing: 0.02em;
+        }
+
+        /* 网格卡片布局 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 40px 0 48px;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 22px 24px;
+            box-shadow: 0 2px 10px rgba(0, 60, 80, 0.04);
+            border: 1px solid #dbeaf0;
+            transition: box-shadow 0.15s;
+        }
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 90, 110, 0.08);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0e4f5e;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h3::before {
+            content: "●";
+            color: #2c9cb0;
+            font-size: 1.1rem;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #2f495a;
+        }
+
+        /* 说明区 */
+        .explain {
+            background: #f0f7fb;
+            border-radius: 24px;
+            padding: 36px 32px;
+            margin-bottom: 48px;
+            border-left: 4px solid #2fafc4;
+        }
+        .explain h2 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            color: #094451;
+            margin-bottom: 16px;
+        }
+        .explain p {
+            margin-bottom: 12px;
+            color: #1c4050;
+        }
+        .explain a {
+            color: #177e8f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+        .explain a:hover {
+            color: #0b5a68;
+            text-decoration-color: #0b5a68;
+        }
+
+        /* FAQ摘要 */
+        .faq-summary {
+            background: white;
+            border-radius: 24px;
+            padding: 32px 28px;
+            margin-bottom: 48px;
+            border: 1px solid #d2e3ec;
+        }
+        .faq-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #0a3f4d;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .faq-summary h2::after {
+            content: "▾";
+            font-size: 1.2rem;
+            color: #3b9daf;
+        }
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px dashed #d2e1ea;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #115d6b;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .faq-a {
+            color: #2f4b5a;
+            font-size: 0.93rem;
+        }
+        .faq-a a {
+            color: #1d7b8c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* 底部 */
+        .footer {
+            border-top: 1px solid #d2e3ec;
+            padding-top: 28px;
+            margin-top: 16px;
+            text-align: center;
+            color: #426c7a;
+            font-size: 0.9rem;
+        }
+        .footer .inline-link {
+            display: inline-block;
+            margin: 0 6px;
+        }
+        .footer a {
+            color: #177e8f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 400;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            .hero {
+                padding: 36px 20px 32px;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .grid-cards {
+                gap: 16px;
+            }
+            .card {
+                padding: 22px 18px;
+            }
+            .explain {
+                padding: 28px 20px;
+            }
+            .faq-summary {
+                padding: 24px 18px;
+            }
+        }
+        @media (max-width: 440px) {
+            .container {
+                padding: 16px 0 40px;
+            }
+            .hero .tagline {
+                font-size: 0.85rem;
+                padding: 8px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero -->
+    <section class="hero">
+        <h1>leyu · 站点说明</h1>
+        <p class="sub">对 fog-leyu.com.cn 所提供的内容、方向与边界做一个清晰的整理，帮助初次接触的朋友快速了解全貌。</p>
+        <div class="tagline">基于实际信息 · 不夸大不模糊</div>
+    </section>
+
+    <!-- 优势区：网格卡片 -->
+    <div class="grid-cards">
+        <div class="card">
+            <h3>信息结构</h3>
+            <p>站点采用分类模块组织内容，主要围绕特定主题与实用资源展开，便于按需查找。</p>
+        </div>
+        <div class="card">
+            <h3>界面体验</h3>
+            <p>页面设计注重可读性与加载效率，不堆砌无关元素，在移动设备上同样保持清晰布局。</p>
+        </div>
+        <div class="card">
+            <h3>更新节奏</h3>
+            <p>内容维护以稳定为原则，不追求频繁变动，更侧重已有信息的准确性与可参考性。</p>
+        </div>
+        <div class="card">
+            <h3>访问说明</h3>
+            <p>站点直接通过主流浏览器即可访问，无需额外配置，https 协议保证基本传输安全。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：站点介绍与可信说明 -->
+    <section class="explain">
+        <h2>关于 fog-leyu.com.cn 的几点说明</h2>
+        <p>
+            <strong>leyu</strong> 是一个以内容汇集与信息展示为主要方向的个人站点，域名主体为 fog-leyu.com.cn。  
+            站内所呈现的材料均经过整理与筛选，力求提供相对清晰、可回溯的阅读体验。  
+            如果希望直接访问站点首页，可使用链接 <a href="https://fog-leyu.com.cn">leyu</a> 进入。
+        </p>
+        <p>
+            站点不收集访问者的个人信息，也未嵌入第三方跟踪脚本。所有页面均通过标准 HTTPS 提供服务，在传输层面具备基础加密保护。  
+            内容方面不包含商业推广、跳转链或诱导性表述，整体定位更接近一份经过编排的公开说明/索引。
+        </p>
+        <p>
+            任何关于站内信息的疑问或建议，均可以通过页面底部预留的渠道进行反馈。我们会根据实际情况对说明进行补充或修正。
+        </p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="faq-summary">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">leyu 主要提供哪类内容？</div>
+            <div class="faq-a">以特定话题的梳理、资源索引和说明文档为主，不涉及论坛或实时互动功能。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面信息是否定期更新？</div>
+            <div class="faq-a">依据内容本身的需要做修订，没有固定周期。重要变化会通过站点内的更新日志标注。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">移动端访问是否正常？</div>
+            <div class="faq-a">页面采用响应式设计，在手机与平板上均可正常阅读，无需缩放或横向滚动。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">如何确认站点信息的可靠性？</div>
+            <div class="faq-a">每篇内容均注明参考来源或编写依据，不凭空编造。同时保留对历史版本的归档说明。<br>
+                站点主域为 <a href="https://fog-leyu.com.cn">leyu</a>，其他镜像或仿冒域名与本站点无关。</div>
+        </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <footer class="footer">
+        <p>
+            <span class="inline-link">主域：<a href="https://fog-leyu.com.cn">leyu</a></span>  
+            <span class="inline-link">· 内容仅供了解参考</span>
+        </p>
+        <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
+            fog-leyu.com.cn · 信息说明页
+        </p>
+    </footer>
+
+</div>
+</body>
+</html>
