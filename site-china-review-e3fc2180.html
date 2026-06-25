@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500彩票网官方 · 信息介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f9fc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.65;
+            color: #1a2a3a;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 3.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e9f0;
+            padding-bottom: 2.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #0b1c2c;
+            line-height: 1.25;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #3e5a6f;
+            max-width: 90%;
+            margin-top: 0.2rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #eef3f8;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2b5778;
+            margin-top: 1.2rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 优势区 */
+        .advantages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .advantage-item {
+            flex: 1 1 200px;
+            background: #ffffff;
+            padding: 1.4rem 1.2rem 1.5rem 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0,0,0,0.02);
+        }
+
+        .advantage-item h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            color: #1f374c;
+        }
+
+        .advantage-item p {
+            font-size: 0.9rem;
+            color: #3d5a70;
+        }
+
+        /* 说明区 (信息卡片) */
+        .info-section {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 0 0 1px #eaeef3;
+            margin-bottom: 3rem;
+        }
+
+        .info-section h2 {
+            font-size: 1.4rem;
+            font-weight: 520;
+            margin-bottom: 1.3rem;
+            color: #0e2638;
+            letter-spacing: -0.01em;
+        }
+
+        .info-section p {
+            margin-bottom: 1rem;
+            font-size: 0.96rem;
+            color: #1f3548;
+        }
+
+        .info-section p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .info-section a {
+            color: #1b5f7a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #b3cbd9;
+            transition: border-color 0.2s;
+        }
+
+        .info-section a:hover {
+            border-bottom-color: #1b5f7a;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin-bottom: 3rem;
+            padding: 0 0.2rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #0b283c;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #dee7ef;
+            padding: 1rem 0;
+        }
+
+        .faq-item:first-of-type {
+            padding-top: 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 520;
+            margin-bottom: 0.3rem;
+            color: #153c53;
+            font-size: 0.98rem;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #3a5b73;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .faq-more {
+            font-size: 0.88rem;
+            margin-top: 1rem;
+            color: #2c5a78;
+        }
+
+        .faq-more a {
+            color: #1b5f7a;
+            text-decoration: none;
+            border-bottom: 1px solid #c2d7e6;
+        }
+
+        .faq-more a:hover {
+            border-bottom-color: #1b5f7a;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            border-top: 1px solid #dae3ec;
+            padding-top: 2rem;
+            margin-top: 0.5rem;
+            text-align: left;
+            font-size: 0.9rem;
+            color: #2d4b61;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .footer-links .brand {
+            font-weight: 450;
+            letter-spacing: 0.2px;
+        }
+
+        .footer-links .brand a {
+            color: #1b5f7a;
+            text-decoration: none;
+            border-bottom: 1px solid #bfd3e0;
+        }
+
+        .footer-links .brand a:hover {
+            border-bottom-color: #1b5f7a;
+        }
+
+        .footer-links .meta {
+            font-size: 0.8rem;
+            color: #56748b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 480px) {
+            body { padding: 1.5rem 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .info-section { padding: 1.5rem 1.2rem; }
+            .advantages { gap: 1rem; }
+            .advantage-item { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero 区 -->
+        <div class="hero">
+            <h1>500彩票网官方 · 入口说明</h1>
+            <div class="sub">面向有长期习惯的访问者，提供清晰的站点指引与功能概览。</div>
+            <span class="tagline">稳定入口 · 信息透明</span>
+        </div>
+
+        <!-- 优势区 -->
+        <div class="advantages">
+            <div class="advantage-item">
+                <h3>页面结构稳定</h3>
+                <p>长期维护的入口页，避免无效跳转与频繁改版带来的认知负担。</p>
+            </div>
+            <div class="advantage-item">
+                <h3>功能介绍直接</h3>
+                <p>对彩票种类、开奖节奏、账户体系有简明说明，减少摸索时间。</p>
+            </div>
+            <div class="advantage-item">
+                <h3>访问路径清晰</h3>
+                <p>从本页到目标站点路径固定，不掺杂多余中间页或干扰信息。</p>
+            </div>
+        </div>
+
+        <!-- 说明区 (信息密度稍高) -->
+        <div class="info-section">
+            <h2>关于此页面</h2>
+            <p>本页为 <a href="https://site-china-500.com">500彩票网官方</a> 的静态介绍页，旨在为使用者提供一份无噪音的指引。内容围绕站点核心功能展开：数字彩、竞彩、即开型彩票的规则摘要，开奖历史查询方式，以及个人账户的资金管理入口说明。</p>
+            <p>作为外部引导页，我们不对站内具体玩法进行二次包装，仅如实列出常见模块的访问前提与注意事项。如需直接进入主站，下方或上文中的链接均指向同一个稳定地址：<a href="https://site-china-500.com">500彩票网官方</a>。</p>
+            <p>建议初次使用者优先阅读该站“帮助中心”与“开奖公告”栏目，了解返奖率、兑奖期限及合买流程。本页不收集任何用户数据，也不嵌入第三方追踪脚本。</p>
+        </div>
+
+        <!-- FAQ 摘要 (4 条常见问题) -->
+        <div class="faq-summary">
+            <h2>常见疑问 · 摘要</h2>
+            <div class="faq-item">
+                <strong>如何确认当前访问的是官方站点？</strong>
+                <p>请核对浏览器地址栏域名是否为 site-china-500.com，本页面的所有链接均指向该域名。另外可留意页面底部的备案或版权信息。</p>
+            </div>
+            <div class="faq-item">
+                <strong>购彩前需要注册吗？</strong>
+                <p>是的。根据平台规则，所有交易均需通过实名账户完成，包括选号、支付、奖金提取等环节。</p>
+            </div>
+            <div class="faq-item">
+                <strong>开奖结果通常在什么时间更新？</strong>
+                <p>大部分彩种在开奖后 5–30 分钟内更新，高频彩更新节奏更快。具体以站点公告栏的标注时间为准。</p>
+            </div>
+            <div class="faq-item">
+                <strong>合买与跟单功能是否有额外说明？</strong>
+                <p>合买方案需阅读发起人设置的方案详情，包括分成比例、保底金额等。跟单前建议查看历史战绩与信誉值。</p>
+            </div>
+            <div class="faq-more">
+                📄 完整FAQ请参考 <a href="https://site-china-500.com">500彩票网官方</a> 帮助中心。
+            </div>
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="footer-links">
+            <span class="brand"><a href="https://site-china-500.com">500彩票网官方</a> · 信息索引页</span>
+            <span class="meta">仅作说明用途 · 无诱导内容</span>
+        </div>
+    </div>
+</body>
+</html>
